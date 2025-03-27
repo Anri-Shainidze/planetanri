@@ -1,0 +1,347 @@
+.main {
+    text-align: center;
+    counter-reset: main; // create a custom counter for the menu__details "01, 02, 03' format 
+    max-width: 90rem;
+
+    @include respond-between(xs, md) {
+        padding: 0 2.4375rem;
+    }
+
+    @include respond-above(md) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        padding: 0 11.45833333333333vw;
+        padding-top: 6.25rem;
+    }
+
+    @include respond-above(lg) {
+        padding: 0 10.3125rem;
+        padding-top: 7.875rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    // LEFT SIDE CONTENT ON DESKTOP
+    .planet__img__wrapper {
+        height: 18.75rem;
+        position: relative;
+        margin-right: auto;
+        margin-left: auto;
+        transition: all .3s ease-in;
+
+        @include respond-between(xs, md) {
+            height: 28.75rem;
+            padding: 0 
+        }
+
+        @include respond-above(md) {
+            height: 32.75rem;
+        }
+
+        // PLANET IMAGE SIZES -------------------------------
+        .planet-img {
+
+            &.mercury {
+                max-height: 29.6%;
+            }
+            &.venus {
+                max-height: 40%;
+            }
+            &.earth {
+                max-height: 46%;
+            }
+            &.mars {
+                max-height: 34.5%;
+            }
+            &.jupiter {
+                max-height: 60%;
+            }
+            &.saturn {
+                max-height: 68%;
+            }
+            &.uranus {
+                max-height: 47%;
+            }
+            &.neptune {
+                max-height: 46%;
+            }
+
+            @include respond-between(xs, md) {
+                &.mercury {
+                    max-height: 26.6669%;
+                }
+                &.venus {
+                    max-height: 36.7%;
+                }
+                &.earth {
+                    max-height: 41.3%;
+                }
+                &.mars {
+                    max-height: 31%;
+                }
+                &.jupiter {
+                    max-height: 23.0625rem;
+                }
+                &.saturn {
+                    max-height: 61%;
+                }
+                &.uranus {
+                    max-height: 42%;
+                }
+                &.neptune {
+                    max-height: 41.3%;
+                }
+            }
+
+            @include respond-above(md) {
+                &.mercury,
+                &.venus,
+                &.earth,
+                &.mars,
+                &.jupiter,
+                &.saturn,
+                &.uranus,
+                &.neptune {
+                    max-height: 100%;
+                }
+            }
+        }
+
+        .planet-geo-img {
+            position: absolute;
+            height: 6rem;
+            top: 60%;
+            z-index: 2;
+
+            @include respond-between(xs, md) {
+                height: 12.4375rem;
+                width: 10.1875rem;
+                max-width: 81.5px;
+                max-height: 99.5px;
+                top: 60%;
+            }
+
+            @include respond-above(md) {
+                height: 12.4375rem;
+                width: 10.1875rem;
+                max-width: 163px;
+                max-height: 199px;
+                top: 60%;
+            }
+        }
+    }
+
+    // RIGHT SIDE CONTENT ON DESKTOP
+    .planet__section {
+        margin-left: auto;
+
+        @include respond-between(xs, md) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 4.3125rem;
+            grid-template-areas: 
+            'title details'
+            'article details'
+            'citation details';
+            text-align: left;
+        }
+
+        .planet__title {
+            position: relative;
+            grid-area: title;
+            align-self: center;
+            font-family: Antonio;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 2.5rem;
+            line-height: 3.25rem; /* identical to box height */
+            margin: 0;
+    
+            text-align: center;
+            text-transform: uppercase;
+
+            h1 {
+                margin: 0;
+                padding: 0;
+            }
+            span {
+                margin: 0;
+                padding: 0;
+            }
+
+            @include respond-between(xs, md) {
+                text-align: left;
+                font-size: 3rem;
+                line-height: 3.875rem;
+            }
+    
+            @include respond-above(md) {
+                text-align: left;
+                font-size: 5rem;
+                line-height: 5.5rem;
+            }
+        }
+    
+        .planet__paragraph {
+            grid-area: article;
+            font-family: Spartan;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 0.6875rem;
+            line-height: 200%; /* or 200% */
+            
+            text-align: center;
+            margin: 1rem 1.5rem 2rem 1.5rem;
+            max-width: 21.875rem;
+    
+            color: $white;
+
+
+            @include respond-between(xs, md) {
+                height: 6.875rem;
+                text-align: left;
+                margin-top: 1.5rem;
+                margin-right: 0;
+                margin-left: 0;
+            }
+    
+            @include respond-above(md) {
+                height: 9.375rem;
+                font-size: 0.875rem;
+                line-height: 179%; /* or 179% */
+                text-align: left;
+                margin: 0;
+                margin-top: 1.75rem;
+            }
+        }
+    
+        // WIKIPEDIA LINK
+        .planet__citation {
+            grid-area: citation;
+            font-family: Spartan;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 0.75rem;
+            line-height: 208%; /* identical to box height, or 208% */
+    
+            color: $white;;
+    
+            mix-blend-mode: normal;
+            opacity: 0.5;
+    
+            a {
+                color: $white;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+    
+            img {
+                mix-blend-mode: normal;
+            }
+
+            @include respond-between(xs, md) {
+                margin: 0;
+            }
+
+            @include respond-above(md) {
+                text-align: left;
+                margin: 0;
+                margin-top: 1.5rem;
+                margin-bottom: 1.5625rem;
+                font-size: 0.875rem;
+            }
+        }
+
+        // OVERVIEW STRUCTURE SURFACE MENU
+        .menu__content__wrapper {
+            grid-area: details;
+
+            .menu__content {
+                display: block;
+                max-width: 21.875rem;
+                list-style: none;
+                font-family: Spartan;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 0.75rem;
+                text-align: left;
+                line-height: 208%; /* identical to box height, or 208% */
+                margin: 0;
+                margin-top: 1rem;
+                padding: 0;   
+        
+                letter-spacing: 2.57143px;
+                text-transform: uppercase;
+        
+                .content-link {
+                    border: 1px solid #ffffff50;
+                    padding-top: 0.75rem;
+                    padding-bottom: 0.6875rem;
+
+                    transition: transform 0.3s ease-out;
+        
+                    &:not(:last-child) {
+                        margin-bottom: 1rem;
+                    }
+        
+                    &:hover {
+                        background-color: $darkGrey;
+                        border-color: transparent;
+                        transform: scale(1.02);
+                    }
+            
+                    &::before {
+                        padding: 0 1.75rem;
+                        counter-increment: main;
+                        content: '0' counter(main);
+            
+                        opacity: 0.5;
+                    }
+        
+                    a {
+                        color: $white;
+                    }
+
+                    &.content-active {
+                        border-color: transparent;
+                    }
+
+                    // planet colors -------------------------------------------
+                    &.content-active.mercury {
+                        background-color: $mercury;
+                    }
+                    &.content-active.venus {
+                        background-color: $venus;
+                    } 
+                    &.content-active.earth {
+                        background-color: $earth;
+                    } 
+                    &.content-active.mars {
+                        background-color: $mars;
+                    } 
+                    &.content-active.jupiter {
+                        background-color: $jupiter;
+                    } 
+                    &.content-active.saturn {
+                        background-color: $saturn;
+                    } 
+                    &.content-active.uranus {
+                        background-color: $uranus;
+                    } 
+                    &.content-active.neptune {
+                        background-color: $neptune;
+                    }   
+
+                    @include respond-between(xs, md) {
+                        font-size: 0.5625rem;
+                        
+                        &::before {
+                            padding: 0.5rem 1.0625rem;
+                        }
+                    }
+                }  
+            }
+        }
+    } 
+}

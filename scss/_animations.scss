@@ -1,0 +1,11 @@
+.animText-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+
+    .animLetter {
+        transform-origin: 0 100%;
+        display: inline-block;
+        line-height: 1em;
+    }
+}

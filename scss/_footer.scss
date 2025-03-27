@@ -1,0 +1,146 @@
+footer {
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+
+    .stats {
+        padding-bottom: 2.9375rem;
+
+        @include respond-below(xs) {
+            padding: 0 1.5rem;
+            padding-bottom: 2.9375rem;
+        }
+
+        @include respond-above(xs) {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            justify-items: space-between;
+            grid-gap: 1.875rem;
+            padding: 0 11.45833333333333vw;
+            padding-top: 4.1875rem;
+            padding-bottom: 3.5rem;
+        }
+
+        @include respond-between(xs, md) {
+            grid-gap: 0.6875rem;
+            padding: 0 2.4375rem;
+            padding-top: 1.6875rem;
+            padding-bottom: 2.25rem;
+        }
+
+        @include respond-above(lg) {
+            padding: 0 10.3125rem;
+            padding-top: 5.4375rem;
+            padding-bottom: 3.5rem;
+        }
+
+        .stat {
+            border: 1px solid #ffffff50;
+            box-sizing: content-box;            
+
+            @include respond-below(xs) {
+                margin-bottom: 0.5rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            @include respond-above(xs) {
+                display: block;
+                text-align: left;
+                padding-left: 1.4375rem;
+                max-width: 14.0625rem;
+            }
+
+            @include respond-between(xs, md) {
+                padding-left: 0.9375rem;
+            }
+
+            @include respond-above(lg) {
+                padding-right: 1.875rem;
+            }
+        }
+
+        h1 {
+            font-family: Spartan;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 0.5rem;
+            line-height: 200%; /* identical to box height, or 200% */ 
+            margin: 0;
+            
+            letter-spacing: 0.0454545625em;
+            text-transform: uppercase;
+
+            color: $white;
+            opacity: 0.5;
+
+            @include respond-below(xs) {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                padding-left: 1.5rem;
+            }
+
+            @include respond-between(xs, md) {
+                font-size: 0.5rem;
+                letter-spacing: 0.0454545625rem;
+                padding-top: 1rem;
+                padding-bottom: 0.375rem;
+            }
+
+            @include respond-above(md) {
+                font-size: 0.6875em;
+                line-height: 227%; /* identical to box height, or 227% */
+                letter-spacing: 0.0625rem;
+                padding: 0;
+                padding-top: 1.25rem;
+                padding-bottom: 0.25rem;
+            }
+        }
+        p {
+            font-family: Antonio;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.25rem;
+            line-height: 1.625rem; /* identical to box height */
+            margin: 0;
+            padding-right: 1.5rem; 
+
+            text-align: right;
+            letter-spacing: -0.046875em;
+            text-transform: uppercase;
+
+            color: #FFFFFF;
+
+            @include respond-between(xs, md) {
+                font-size: calc((27.087vw - 2.5rem) / 7);
+                line-height: 1.9375rem;
+                letter-spacing: 0.05625rem;
+                text-align: left;
+                padding: 0;
+                padding-bottom: 1.1875rem;
+            }
+
+            @include respond-above(md) {
+                font-size: calc((22.25vw - 2.5rem) / 7);
+                line-height: 3.25rem;
+                text-align: left;
+                letter-spacing: -0.09375rem;
+                padding: 0;
+                padding-bottom: 1.6875rem;
+            }
+
+            @include respond-above(lg) {
+                font-size: 2.1875rem;
+                line-height: 3.25rem;
+                text-align: left;
+                letter-spacing: -0.09375rem;
+                padding: 0;
+                padding-bottom: 1.6875rem;
+            }
+        }
+    }
+}
+
+// how to get a variable font size https://stackoverflow.com/a/39269074

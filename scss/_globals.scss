@@ -1,0 +1,149 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    display: block;
+    position: relative;
+    font-family: Spartan;
+    background-repeat: no-repeat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.5625rem;
+    padding: 0;
+    margin: 0;
+
+    color: $white;
+
+    a {
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+}
+.sky {
+    background-color: $black;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: -10;
+}
+
+.shootingstars {
+    display: block;
+    position: fixed;
+    width: 150vh;
+    height: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: -1;
+    transform: translatex(calc(50vw - 50%)) translatey(calc(50vh - 50%)) rotate(120deg);
+}
+
+.wish {
+    height: 2px;
+    top: 300px;
+    width: 100px;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    background-color: white;
+    position: absolute;
+    background: linear-gradient(-45deg, white, rgba(0, 0, 255, 0));
+    filter: drop-shadow(0 0 6px white);
+    overflow: hidden;
+}
+
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-jc-se {
+        justify-content: space-evenly;
+    }
+
+    &-jc-c {
+        justify-content: center;
+    }
+
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+.grid {
+    display: grid;
+
+    &-ji-c {
+        justify-items: center;
+    }
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+
+//visibility 
+.hide {
+    display: none;
+}
+
+.hide-for-mobile {
+    @include respond-below(xs) {
+        display: none;
+    }
+}
+
+.hide-for-tablet {
+    @include respond-between(xs, md) {
+        display: none;
+    }
+}
+  
+.hide-for-desktop {
+    @include respond-above(md){
+        display: none;
+    }
+}
+
+.mobile-only {
+    @include respond-above(xs) {
+        display: none;
+    }
+}
+
+.tablet-only {
+    @include respond-below(xs) {
+        display: none;
+    }
+
+    @include respond-above(md) {
+        display: none;
+    }
+}
+
+.desktop-only {
+    @include respond-below(md) {
+        display: none;
+    }
+}
