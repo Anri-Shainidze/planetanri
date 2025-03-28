@@ -41,31 +41,30 @@ toggle.addEventListener('click', () => {
 
 planetLinks.forEach(link => {
   link.addEventListener('click', () => {
-    switchPlanet(link.classList[1], link.classList[2]) // The [2] class must always be the planet name
+    switchPlanet(link.classList[1], link.classList[2]) 
 
-    if(link.parentElement.classList.contains('toggle-item')) { // if on mobile
+    if(link.parentElement.classList.contains('toggle-item')) {
       toggle.classList.remove('toggle-active')
       body.classList.toggle('noscroll')
       menuContent.classList.remove('hide')
-      toggleItems.forEach(item => { // toggle items are the mobile only links
-        item.classList.remove('active') // on mobile, active shows and hides the links
+      toggleItems.forEach(item => {
+        item.classList.remove('active') 
       })
     }
 
-    if(link.parentElement.classList.contains('hide-for-mobile')) {  // if on tablet
-      planetLinks.forEach(ele => {     // remove the active class from all links
-        ele.classList.remove('active') // on tablet, the active class shows the ::after element with planet specific colors
+    if(link.parentElement.classList.contains('hide-for-mobile')) {  
+      planetLinks.forEach(ele => { 
+        ele.classList.remove('active') 
       })
-      link.classList.add('active') // only add active to one link
+      link.classList.add('active') 
     }
   })
 })
 
-// when we click overview, internal, or surface links
 contentLinks.forEach(link => {
     link.addEventListener('click', () => {
-      if(flyInAnimComplete) { // cannot click buttons and interfere with the animation and cause bugs
-        if(!link.classList.contains('content-active')) // cannot click buttons that are already active
+      if(flyInAnimComplete) { 
+        if(!link.classList.contains('content-active')) 
         switchContent(link.classList[1])
         contentLinks.forEach(otherLink => {
             otherLink.classList.remove('content-active')
@@ -76,7 +75,7 @@ contentLinks.forEach(link => {
 })
 
 function switchPlanet(planetName, index) {
-  if(planetName === currentPlanet) return null // cannot change to the same planet thats already active
+  if(planetName === currentPlanet) return null 
     previousPlanet.planetName = currentPlanet.planetName
     currentPlanet.planetName = planetName;
     currentIndex = index
@@ -88,8 +87,7 @@ function switchPlanet(planetName, index) {
         console.error('ERROR planet name not found. The planet name must be the second class on the planet-links element. Do not remove or change this element.')
     }
 
-    // change each element to match the currently selected planet
-    // The planet image is changed by the flyOutAnim() function, not here
+
     changePlanet.forEach(ele => {
         if(ele.classList.contains('animLetters')) {
             ele.innerHTML = planetData[currentIndex].name
@@ -110,14 +108,12 @@ function switchPlanet(planetName, index) {
     })
     roundNumbersAnim(statValues)
 
-    // change the coloring to match the current planet only if we are not on mobile
     contentLinks.forEach(link => {
       link.classList.remove(previousPlanet.planetName)
       link.classList.add(currentPlanet.planetName)
     })
 }
 
-// change all elements related to the currently selected content
 function switchContent(content) {
   currentContent = content
   previousContent = currentContent
@@ -134,8 +130,8 @@ function switchContent(content) {
             })
             if(ele.classList.contains('planet-img')) { 
                 ele.src = planetData[currentIndex].images.planet
-                ele.classList.remove(ele.classList[2]) //remove the current planet name class with sizing rules
-                ele.classList.add(planetData[currentIndex].name.toLowerCase()) //add the new planet name class. The css styles aren't captialized.
+                ele.classList.remove(ele.classList[2]) 
+                ele.classList.add(planetData[currentIndex].name.toLowerCase()) 
             }
             planetGeoImg.classList.add('hide')
             if(ele.classList.contains('planet__paragraph')) ele.innerHTML = planetData[currentIndex].overview.content

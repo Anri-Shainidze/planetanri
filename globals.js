@@ -1,6 +1,6 @@
-export const planetImg = document.querySelector('.planet-img') // The planet image
-export const standupTextWrapper = document.querySelector('.animLetters'); // The planet name header
-export const statValues = document.querySelectorAll('.stat__value') //displayed in boxes at the bottom of the page
+export const planetImg = document.querySelector('.planet-img') 
+export const standupTextWrapper = document.querySelector('.animLetters');
+export const statValues = document.querySelectorAll('.stat__value') 
 export const currentPlanet = {
     planetName: 'earth',
     get name() {

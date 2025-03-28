@@ -67,7 +67,7 @@ footer {
             font-style: normal;
             font-weight: bold;
             font-size: 0.5rem;
-            line-height: 200%; /* identical to box height, or 200% */ 
+            line-height: 200%; 
             margin: 0;
             
             letter-spacing: 0.0454545625em;
@@ -91,7 +91,7 @@ footer {
 
             @include respond-above(md) {
                 font-size: 0.6875em;
-                line-height: 227%; /* identical to box height, or 227% */
+                line-height: 227%; 
                 letter-spacing: 0.0625rem;
                 padding: 0;
                 padding-top: 1.25rem;
@@ -103,7 +103,7 @@ footer {
             font-style: normal;
             font-weight: normal;
             font-size: 1.25rem;
-            line-height: 1.625rem; /* identical to box height */
+            line-height: 1.625rem; 
             margin: 0;
             padding-right: 1.5rem; 
 
@@ -142,5 +142,3 @@ footer {
         }
     }
 }
-
-// how to get a variable font size https://stackoverflow.com/a/39269074

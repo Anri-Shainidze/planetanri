@@ -1,6 +1,6 @@
 .main {
     text-align: center;
-    counter-reset: main; // create a custom counter for the menu__details "01, 02, 03' format 
+    counter-reset: main; 
     max-width: 90rem;
 
     @include respond-between(xs, md) {
@@ -22,7 +22,7 @@
         margin-right: auto;
     }
 
-    // LEFT SIDE CONTENT ON DESKTOP
+
     .planet__img__wrapper {
         height: 18.75rem;
         position: relative;
@@ -39,7 +39,6 @@
             height: 32.75rem;
         }
 
-        // PLANET IMAGE SIZES -------------------------------
         .planet-img {
 
             &.mercury {
@@ -132,7 +131,7 @@
         }
     }
 
-    // RIGHT SIDE CONTENT ON DESKTOP
+  
     .planet__section {
         margin-left: auto;
 
@@ -155,7 +154,7 @@
             font-style: normal;
             font-weight: normal;
             font-size: 2.5rem;
-            line-height: 3.25rem; /* identical to box height */
+            line-height: 3.25rem; 
             margin: 0;
     
             text-align: center;
@@ -189,7 +188,7 @@
             font-style: normal;
             font-weight: normal;
             font-size: 0.6875rem;
-            line-height: 200%; /* or 200% */
+            line-height: 200%; 
             
             text-align: center;
             margin: 1rem 1.5rem 2rem 1.5rem;
@@ -209,22 +208,21 @@
             @include respond-above(md) {
                 height: 9.375rem;
                 font-size: 0.875rem;
-                line-height: 179%; /* or 179% */
+                line-height: 179%;
                 text-align: left;
                 margin: 0;
                 margin-top: 1.75rem;
             }
         }
     
-        // WIKIPEDIA LINK
+
         .planet__citation {
             grid-area: citation;
             font-family: Spartan;
             font-style: normal;
             font-weight: normal;
             font-size: 0.75rem;
-            line-height: 208%; /* identical to box height, or 208% */
-    
+            line-height: 208%; 
             color: $white;;
     
             mix-blend-mode: normal;
@@ -253,7 +251,6 @@
             }
         }
 
-        // OVERVIEW STRUCTURE SURFACE MENU
         .menu__content__wrapper {
             grid-area: details;
 
@@ -266,7 +263,7 @@
                 font-weight: bold;
                 font-size: 0.75rem;
                 text-align: left;
-                line-height: 208%; /* identical to box height, or 208% */
+                line-height: 208%;
                 margin: 0;
                 margin-top: 1rem;
                 padding: 0;   

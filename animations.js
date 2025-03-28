@@ -55,9 +55,9 @@ function shuffleCircles() {
   background.setAttribute('height', getViewportY())
 }
 
-window.addEventListener('resize', shuffleCircles); // move around the stars to fit the screen size everytime the window resizes
+window.addEventListener('resize', shuffleCircles); 
 
-// make the background stars twinkle
+
 anime({
     targets: [".star"],
     opacity: [
@@ -210,7 +210,6 @@ export function standupLettersAnim(textWrapper, targetClass) {
     })
   }
 
-// resets an objects transform to default to avoid animation bugs
 export function resetAnim(target) {
     target.style.transform = 'none'
 }
