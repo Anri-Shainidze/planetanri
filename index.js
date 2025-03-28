@@ -1,15 +1,15 @@
-const toggle = document.querySelector('.toggle') //mobile hamburger button
-const toggleItems = document.querySelectorAll('.toggle-item') //mobile menu planet anchor links
-const body = document.querySelector('body') // this is to disable scrolling when the mobile menu is open
-const menuContent = document.querySelector('.menu__content') // overview structure surface menu
-const contentLinks = document.querySelectorAll('.content-link') // overview or structure or surface anchor link
-const planetLinks = document.querySelectorAll('.planet-link') // planet named menu anchor links
+const toggle = document.querySelector('.toggle') 
+const toggleItems = document.querySelectorAll('.toggle-item') 
+const body = document.querySelector('body')
+const menuContent = document.querySelector('.menu__content')
+const contentLinks = document.querySelectorAll('.content-link') 
+const planetLinks = document.querySelectorAll('.planet-link') 
 let currentContent = 'overview'
 let previousContent = ''
-let currentIndex = 2 // keep track of which planet object in the json file 'planetData' we are accessing
-const changePlanet = document.querySelectorAll('.change-planet') // all elements that change based on the currently selected planet
-const changeContent = document.querySelectorAll('.change-content') // all elements that change based on overview structure or surface
-const planetGeoImg = document.querySelector('.planet-geo-img') // the image that appears when 'surface geology' content is active
+let currentIndex = 2 
+const changePlanet = document.querySelectorAll('.change-planet') 
+const changeContent = document.querySelectorAll('.change-content') 
+const planetGeoImg = document.querySelector('.planet-geo-img') 
 
 import { planetData } from "./globals.js"
 import { currentPlanet } from "./globals.js"
@@ -25,20 +25,20 @@ import { flyInAnimComplete } from "./animations.js"
 import { staggerLeftAnim } from "./animations.js"
 
 
-// mobile hamburger button behavior
+
 toggle.addEventListener('click', () => {
     
     body.classList.toggle('noscroll')
     toggle.classList.toggle('toggle-active')
     menuContent.classList.toggle('hide') 
 
-    toggleItems.forEach(ele => { // toggle items are the mobile only links
+    toggleItems.forEach(ele => {
         ele.classList.toggle('active')
     })
     staggerLeftAnim('.toggle-item')
 })
 
-// when we click a link
+
 planetLinks.forEach(link => {
   link.addEventListener('click', () => {
     switchPlanet(link.classList[1], link.classList[2]) // The [2] class must always be the planet name

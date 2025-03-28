@@ -11,17 +11,15 @@ import { planetImg } from "./globals.js";
 import { standupTextWrapper } from "./globals.js";
 import { statValues } from "./globals.js";
 
-// get current viewport width
 function getViewportX() {
     return Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
 }
   
-// get current viewport height
+
 function getViewportY() {
     return Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
 }
 
-// These create random x,y coords and sizes for the stars and shooting stars
 const randomRadius = () => {
     return Math.random() * 1.7 + getViewportX() / 1000;
 };
@@ -32,11 +30,9 @@ const getRandomY = () => {
     return Math.floor(Math.random() * Math.floor(window.innerHeight)).toString();
 };
 
-////////////////////////////////
-//  GENERATE BACKGROUND STARS //
-////////////////////////////////
+
 function createCircle(quantity) {
-  //<circle class='star' cx="1155.5" cy="369.5" r="3.5"/>
+
   for(let i = 0; i < quantity; i++) {
     let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle")
     circle.cx.baseVal.value = getRandomX()
@@ -79,9 +75,7 @@ anime({
     delay: (el, i) => 50 * i
 });
 
-////////////////////////////////
-//  GENERATE SHOOTING STARS ////
-////////////////////////////////
+
 
 function createWish(quantity) {
     for(let i = 0; i < quantity; i++) {
@@ -91,9 +85,9 @@ function createWish(quantity) {
         wish.style.top = `${getRandomX()}px`
         shootingstars.appendChild(wish)
     }
-} createWish(60) // create 60 divs to be turned into shooting stars
+} createWish(60)
 
-// animate the shooting stars
+
 anime({
     targets: [".wish"],
     easing: "linear",
@@ -116,14 +110,10 @@ anime({
     translateX: 350,
 });
 
-//////////////////////
-// OTHER ANIMATIONS //
-//////////////////////
 
-// planet title text animation. Thanks to https://tobiasahlin.com/moving-letters/#7
+
 export function standupLettersAnim(textWrapper, targetClass) {
-    // targetClass parameter must NOT have a period first
-    // Wrap every letter in a span
+
     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, `<span class="${targetClass}">$&</span>`);
     anime({
       targets: `.${targetClass}`,
@@ -142,7 +132,7 @@ export function standupLettersAnim(textWrapper, targetClass) {
       targets: target,
       innerHTML: [0, target.innerHTML],
       easing: 'linear',
-      round: 1 // Will round the animated value to 1 decimal
+      round: 1
     });
   }
 
@@ -157,16 +147,16 @@ export function standupLettersAnim(textWrapper, targetClass) {
     }
   }
   
-  // Used for the mobile menu when it opens
+
   export function staggerLeftAnim(target) {
     anime({
       targets: target,
       translateX: [-270, 0],
-      delay: anime.stagger(50), // increase delay by 100ms for each elements.
+      delay: anime.stagger(50), 
     });
   }
   
-  export let flyInAnimComplete = false // prevent other animations from interrupting
+  export let flyInAnimComplete = false 
   export function flyInAnim(target) {
     flyInAnimComplete = false
     anime({
