@@ -246,7 +246,6 @@ body ul {
   font-weight: bold;
   font-size: 0.9375rem;
   line-height: 167%;
-  /* identical to box height, or 167% */
   letter-spacing: 0.0852275rem;
   text-transform: uppercase;
   color: white;
@@ -393,7 +392,6 @@ body ul {
   font-weight: bold;
   font-size: 0.6875rem;
   line-height: 227%;
-  /* identical to box height, or 227% */
   letter-spacing: 0.0625rem;
   text-transform: uppercase;
   text-align: center;
