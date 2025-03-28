@@ -1,4 +1,3 @@
-// animation elements
 const header = document.querySelector(".header");
 const shootingstars = document.querySelector('.shootingstars');
 const background = document.querySelector('.background')
@@ -162,13 +161,9 @@ export function standupLettersAnim(textWrapper, targetClass) {
     anime({
       targets: target,
       translateX: [
-        { value: -2000, duration: 0, delay: 0 },
         { value: 0, duration: 1000, delay: 0 },
       ],
-      translateY: [
-        { value: 2000, duration: 0, delay: 0 },
-        { value: 0, duration: 1000, delay: 0 },
-      ],
+
       scale: [
         { value: 4, duration: 100, delay: 0, easing: 'easeOutExpo' },
         { value: 1, duration: 900 },
@@ -185,13 +180,9 @@ export function standupLettersAnim(textWrapper, targetClass) {
     flyInAnimComplete = false
     anime({
       targets: target,
-      translateX: [ // fly out
+      translateX: [
         { value: 0, duration: 0, delay: 0 },
         { value: 200, duration: 1000, delay: 0 },
-      ],
-      translateY: [
-        { value: 0, duration: 0, delay: 0 },
-        { value: -200, duration: 1000, delay: 0 },
       ],
       scale: [
         { value: 0, duration: 200, delay: 0, easing: 'easeOutExpo' },
@@ -203,7 +194,7 @@ export function standupLettersAnim(textWrapper, targetClass) {
         flyInAnimComplete = true
         resetAnim(target)
         flyInAnim(target)
-        planetImg.src=`assets/planet-${currentPlanet.planetName}.svg` // change the planet image
+        planetImg.src=`assets/planet-${currentPlanet.planetName}.svg` 
         planetImg.classList.remove(previousPlanet.planetName)
         planetImg.classList.add(currentPlanet.planetName)
       }
@@ -214,9 +205,3 @@ export function resetAnim(target) {
     target.style.transform = 'none'
 }
 
-// autoplay animations on load
-function initAnimations() {
-    standupLettersAnim(standupTextWrapper, 'animLetter')
-    roundNumbersAnim(statValues)
-    flyInAnim(planetImg)
-} initAnimations()

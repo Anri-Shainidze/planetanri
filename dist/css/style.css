@@ -52,8 +52,7 @@ body ul {
   padding: 0;
   overflow: hidden;
   z-index: -1;
-  -webkit-transform: translatex(calc(50vw - 50%)) translatey(calc(50vh - 50%)) rotate(120deg);
-          transform: translatex(calc(50vw - 50%)) translatey(calc(50vh - 50%)) rotate(120deg);
+
 }
 
 .wish {
@@ -206,18 +205,9 @@ body ul {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.header .top .toggle {
-  -webkit-transition: opacity, -webkit-transform 0.5s ease-out;
-  transition: opacity, -webkit-transform 0.5s ease-out;
-  transition: opacity, transform 0.5s ease-out;
-  transition: opacity, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
-}
 
-.header .top .toggle.toggle-active {
-  opacity: 0.25;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
+
+
 
 .header .top .bars {
   background: white;
